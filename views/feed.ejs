@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSTA HOME </title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <% for( let user of userfeed ) { %>
+        <!-- make a view page which show user info only not post option -->
+        <a href="http://localhost:8080/home/<%= me[0].username %>/view-profile/<%= user.username %>"> view Profile</a>  
+        <div>
+            <h1>username :<%= user.username %> </h1>
+            <form  method="post" action="/home/<%= me[0].username %>/view-profile/<%= user.username %>/follow">
+                <button>Follow</button>
+            </form>
+                        
+            <% for( let po of user.post ) { %>
+            <div>
+                <h2>caption : <%= po.caption %></h2>
+                <h2>location : <%= po.location %></h2>
+                <button> like : <%= po.like %>  </button>
+
+                <% for( let com of po.comment ) { %>
+                    <button> @<%= com.username %> : <%= com.comment %>  : Likes<%= com.like %> </button>
+                <% } %>
+
+            </div>
+            <% } %>
+        </div>
+        <br>
+    <% } %>
+
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSTA HOME </title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div>
+        <h1>home</h1>
+        <a href="http://localhost:8080/home/<%= me[0].username %>/feed"> Feed</a>  
+
+        <h1>username :<%= user[0].username %> </h1>
+        <h1>Description :<%= user[0].description %> </h1>
+        
+        <% for( let po of user[0].post ) { %>
+            <div>
+                <h2>caption : <%= po.caption %></h2>
+                <h2>location : <%= po.location %></h2>
+                <button> like : <%= po.like %>  </button>
+                <button> comment : <%= po.comment %>  </button>
+    
+            </div>
+            <% } %>
+    
+    </div>
+
+</body>
+</html>
+

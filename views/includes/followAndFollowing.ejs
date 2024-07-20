@@ -1,0 +1,10 @@
+<h1>Follower :</h1>
+
+<% for( let follower of user.follower ) { %>
+    <h2>@ <%= follower %></h2>
+<% } %>
+
+<h1>Following :</h1>
+<% for( let following of user.following ) { %>
+<h2>@ <%= following %></h2>
+<% } %>

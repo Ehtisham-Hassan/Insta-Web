@@ -1,0 +1,32 @@
+<% for( let po of user.post ) { %>
+    <hr>
+    <div>
+        <div>
+            <h2>@:<%= user.username  %></h2>
+        </div>
+        
+        <h2>location : <%= po.location %></h2>
+        <h2>caption : <%= po.caption %></h2>
+        
+        <!--Add this in includes foolder  and re use-->            
+        <div style="display: inline-block;">
+            <form  method="post" action="/home/<%= user.username %>/<%= po.postid %>/like">
+                <button> like : <%= po.like %>  </button>
+            </form>
+        </div>
+
+        <div style="display: inline-block;">
+            <form  method="post" action="/home/<%= user.username %>/<%= po.postid %>/comment">
+                <input placeholder="New Comment" name="comment"> <br>
+                <button >Add Comment</button>
+            </form>
+        </div>
+
+        <div style="display: inline-block;">
+            <form  method="post" action="/home/<%= user.username  %>/<%= po.postid %>?_method=DELETE">
+                <button>DELETE</button>
+            </form>
+        </div>
+
+    </div>
+    <% } %>

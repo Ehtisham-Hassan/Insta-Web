@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div >
+        <h1  style="display: inline-block;">
+            InstaGram
+        </h1>
+        <h1 style="display: inline-block;">
+            <input placeholder="Search" name="search">
+        </h1>
+        <h1 style="display: inline-block;">
+            <a href="http://localhost:8080/home/<%= me.username %>/newpost"> HOME </a>              
+        </h1>
+        <h1 style="display: inline-block;">
+            <a href="http://localhost:8080/home/<%= me.username %>/newpost"> Message : </a>  
+        </h1>
+        <h1 style="display: inline-block;">
+            <a href="http://localhost:8080/home/<%= me.username %>/newpost"> New-Post </a>  
+        </h1>
+        <h1 style="display: inline-block;">
+            <a href="http://localhost:8080/home/<%= me.username %>/newpost"> Explore </a>  
+        </h1>
+        <h1 style="display: inline-block;">
+            <a href="http://localhost:8080/home/<%= me.username %>"> profile </a>  
+        </h1>
+    </div>
+
+
+    <div>
+        <div style="display: inline-block;">
+            <% for( let user of userfeed) {  %>
+
+
+
+                <% for( let po of user.post ) { %>
+                    <div>
+                        <h1>@<%= user.username %> </h1>
+                        <h2>caption : <%= po.caption %></h2>
+                        <h2>location : <%= po.location %></h2>
+                        <button> like : <%= po.like %>  </button>
+        
+                        <% for( let com of po.comment ) { %>
+                            <button> @<%= com.username %> : <%= com.comment %>  : Likes<%= com.like %> </button>
+                        <% } %>
+        
+                    </div>
+                    <% } %>
+        
+            <% } %>
+        </div>
+
+        <div style="display: inline-block;">
+
+        </div>
+    </div>
+
+    
+</body>
+</html>

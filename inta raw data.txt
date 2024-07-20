@@ -1,0 +1,38 @@
+INSTA
+
+	1- OLd user
+	2- new user
+
+User:
+	1-profile	
+		!- profile picture
+		-username (UNIQUE)
+		-password
+		-details (info)
+			-description text
+		-follower (array)
+			-array (follower user)
+		-following (array)
+			-array (following user)
+		-post (obj) //display count 
+			-post id
+			-post content
+			-shair (follower)
+			-like
+			-comment
+				!-like
+				!-reply
+	2-user feature's
+		-feed
+			!-following post
+			-post (obj) 
+			!-picture/video
+		!-story
+			-following story
+			-story
+		!-live chat
+		!-search user
+		!-Notification's
+		!-reels
+		
+
